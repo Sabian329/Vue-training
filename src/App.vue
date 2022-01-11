@@ -71,7 +71,7 @@ export default {
   height: 100%;
   backdrop-filter: blur(2px);
   z-index: 1;
-  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .mainWrapper {
   display: flex;
