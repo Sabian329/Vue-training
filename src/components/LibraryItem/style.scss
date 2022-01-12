@@ -1,5 +1,5 @@
 li {
-  height: 35rem;
+  height: 30rem;
   backdrop-filter: blur(2px);
   background: rgba(0, 0, 0, 0.548);
   display: flex;
@@ -8,10 +8,10 @@ li {
   align-items: center;
   padding: 2rem;
   border-radius: 10px;
-  position: relative;
+  z-index: 1;
 }
 img {
-  width: 25rem;
+  width: 15rem;
   height: 25rem;
   object-fit: contain;
 }
@@ -22,13 +22,14 @@ img {
 button {
   width: 6rem;
   height: 2rem;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: rgba(0, 0, 0, 0.548);
+  // position: absolute;
+  background: rgba(172, 172, 172, 0.548);
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 50px;
   cursor: pointer;
   font-size: 1rem;
+  :hover {
+    background-color: brown;
+  }
 }

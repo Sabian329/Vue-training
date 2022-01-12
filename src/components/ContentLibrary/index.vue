@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="library-list">
     <LibraryItem
       @close="closeImages"
       v-for="item in array"
@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
 import LibraryItem from "../LibraryItem/index.vue";
 export default {
   components: {
