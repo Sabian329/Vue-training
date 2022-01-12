@@ -1,26 +1,3 @@
-<template>
-  <li>
-    <p class="title">{{ title }}</p>
-    <img v-bind:src="href" />
-    <button @click="closeImages">close all</button>
-  </li>
-</template>
-
-<script>
-export default {
-  name: "LibraryItem",
-  methods: {
-    closeImages() {
-      this.$emit("close", false);
-    },
-  },
-  props: {
-    title: "",
-    href: "",
-  },
-};
-</script>
-<style lang="scss" scoped>
 li {
   height: 35rem;
   backdrop-filter: blur(2px);
@@ -55,4 +32,3 @@ button {
   cursor: pointer;
   font-size: 1rem;
 }
-</style>

@@ -11,10 +11,12 @@
 </template>
 
 <script>
-import LibraryItem from "../LibraryItem/LibraryItem.vue";
+import LibraryItem from "../LibraryItem/index.vue";
 export default {
-  components: { LibraryItem },
-  name: "Library",
+  components: {
+    LibraryItem,
+  },
+  name: "ContentLibrary",
   props: {
     array: [],
   },
@@ -25,18 +27,4 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-ul {
-  width: 100rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  list-style: none;
-  height: 50rem;
-  color: #fff;
-  font-size: 1.2rem;
-}
-</style>
+<style src="./style.scss" lang="scss"></style>

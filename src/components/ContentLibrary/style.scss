@@ -1,0 +1,12 @@
+ul {
+  width: 25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  height: 1rem;
+  color: #fff;
+  font-size: 1.2rem;
+}
