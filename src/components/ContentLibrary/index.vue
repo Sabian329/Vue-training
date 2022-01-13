@@ -4,18 +4,18 @@
       @close="closeImages"
       v-for="item in array"
       :key="item.data[0].nasa_id"
-      :title="item.data[0].title"
-      :href="item.links[0].href"
+      :item="item"
     />
   </ul>
 </template>
 
 <script>
-import { gsap } from "gsap";
+import Modal from "../Modal/index.vue";
 import LibraryItem from "../LibraryItem/index.vue";
 export default {
   components: {
     LibraryItem,
+    Modal,
   },
   name: "ContentLibrary",
   props: {

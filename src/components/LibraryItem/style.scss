@@ -1,7 +1,6 @@
 li {
   height: 30rem;
-  backdrop-filter: blur(2px);
-  background: rgba(0, 0, 0, 0.548);
+  background: rgba(0, 0, 0, 0.657);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +21,6 @@ img {
 button {
   width: 6rem;
   height: 2rem;
-  // position: absolute;
   background: rgba(172, 172, 172, 0.548);
   color: rgb(255, 255, 255);
   border: none;

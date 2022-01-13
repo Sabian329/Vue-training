@@ -1,17 +1,17 @@
 <template>
-  <div id="app">
-    <div class="mainWrapper">
-      <Claim />
-      <Search @input="setInputValue" v-model="inputValue" />
-      <button @click="search"><img class="search" src="../assets/images/telescope.svg" /></button>
-      <ContentLibrary
-        class="content-library"
-        v-if="isLoaded === true"
-        :array="results"
-        @close="closeImages"
-        :close="isLoaded"
-      />
-    </div>
+  <div class="mainWrapper">
+    <Claim />
+    <Search @input="setInputValue" v-model="inputValue" />
+    <button @mouseover="animations(true)" @mouseleave="animations(false)" @click="search">
+      <img class="search" src="../assets/images/telescope.svg" />
+    </button>
+    <ContentLibrary
+      class="content-library"
+      v-if="isLoaded === true"
+      :array="results"
+      @close="closeImages"
+      :close="isLoaded"
+    />
   </div>
 </template>
 <script>
@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       results: [],
-      isLoading: false,
+      typing: false,
       isLoaded: false,
       inputValue: "hubble",
       value: "",
@@ -41,6 +41,11 @@ export default {
   },
 
   methods: {
+    animations(on) {
+      on
+        ? gsap.to(".search", { rotate: -45, duration: 0.2 })
+        : gsap.to(".search", { rotate: 0, duration: 0.2 });
+    },
     search() {
       this.results = [];
       axios
@@ -48,7 +53,6 @@ export default {
         .then((responce) => {
           this.isLoading = true;
           this.results = responce?.data?.collection?.items;
-          this.results.length ? (this.isLoading = false) : (this.isLoading = true);
           responce.status === 200 && (this.isLoaded = true);
         })
         .catch((error) => console.log(error));
@@ -56,6 +60,7 @@ export default {
     },
     setInputValue: function (payload) {
       payload = this.inputValue;
+      let app = gsap.to(".search", { y: 0, opacity: 1, rotate: 0, duration: 0.5 });
     },
     closeImages: function (value) {
       this.isLoaded = value;

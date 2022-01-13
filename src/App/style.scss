@@ -1,28 +1,8 @@
-#app {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url("../assets/images/background.jpg");
-  background-position: center;
-  background-size: cover;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(2px);
-  z-index: 1;
-  overflow-x: hidden;
-}
 .mainWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 5rem;
   margin-top: 10rem;
   z-index: 2;
   height: max-content;
@@ -35,17 +15,7 @@ button {
   cursor: pointer;
   position: relative;
 
-  :active {
-    background-color: rgba(0, 0, 0, 0.144);
-    border-radius: 10px;
-    transform: rotate(-45deg);
-  }
-  :hover {
-    transition: 0.2s linear;
-    transform: rotate(-45deg);
-  }
   .search {
-    transition: 0.2s linear;
     width: 3rem;
   }
 }
