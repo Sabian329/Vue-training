@@ -1,8 +1,8 @@
 <template>
   <li>
-    <Modal v-if="isModalOpen" item="item" />
+    <Modal v-if="isModalOpen" :item="item" @close="setModalOpen" />
     <p class="title">{{ item.data[0].title.substring(0, 30) + "..." }}</p>
-    <img @click="setModalOpen" v-bind:src="item.links[0].href" />
+    <img @click="setModalOpen(true)" v-bind:src="item.links[0].href" />
     <button @click="closeImages">close all</button>
   </li>
 </template>
@@ -22,8 +22,8 @@ export default {
     Modal,
   },
   methods: {
-    setModalOpen() {
-      this.isModalOpen = !this.isModalOpen;
+    setModalOpen(value) {
+      this.isModalOpen = value;
     },
     closeImages() {
       this.$emit("close", false);
