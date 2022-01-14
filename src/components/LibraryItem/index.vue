@@ -2,8 +2,9 @@
   <li>
     <Modal v-if="isModalOpen" :item="item" @close="setModalOpen" />
     <p class="title">{{ item.data[0].title.substring(0, 30) + "..." }}</p>
-    <img @click="setModalOpen(true)" v-bind:src="item.links[0].href" />
-    <button @click="closeImages">close all</button>
+    <div class="img-wrapper">
+      <img class="img-content" @click="setModalOpen(true)" v-bind:src="item.links[0].href" />
+    </div>
   </li>
 </template>
 

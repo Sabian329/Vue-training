@@ -2,7 +2,12 @@
   <div class="mainWrapper">
     <Claim />
     <Search @input="setInputValue" v-model="inputValue" />
-    <button @mouseover="animations(true)" @mouseleave="animations(false)" @click="search">
+    <button
+      class="rocket-button"
+      @mouseover="animations(true)"
+      @mouseleave="animations(false)"
+      @click="search"
+    >
       <img class="search" src="../assets/images/telescope.svg" />
     </button>
     <ContentLibrary

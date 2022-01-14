@@ -3,11 +3,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 10rem;
   z-index: 2;
   height: max-content;
+  margin: auto;
 }
-button {
+.rocket-button {
   background: transparent;
   border: 0;
   font-size: 2rem;

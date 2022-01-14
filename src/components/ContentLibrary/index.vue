@@ -1,11 +1,7 @@
 <template>
   <ul class="library-list">
-    <LibraryItem
-      @close="closeImages"
-      v-for="item in array"
-      :key="item.data[0].nasa_id"
-      :item="item"
-    />
+    <button class="fixed-button" @click="closeImages">Close List</button>
+    <LibraryItem v-for="item in array" :key="item.data[0].nasa_id" :item="item" />
   </ul>
 </template>
 
