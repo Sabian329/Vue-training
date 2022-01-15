@@ -10,6 +10,7 @@
     >
       <img class="search" src="../assets/images/telescope.svg" />
     </button>
+    <Loading v-if="isLoading" />
     <ContentLibrary
       class="content-library"
       v-if="isLoaded === true"
@@ -24,6 +25,7 @@ import axios from "axios";
 import Search from "@/components/Search/index.vue";
 import ContentLibrary from "@/components/ContentLibrary/index.vue";
 import Claim from "@/components/Claim/index.vue";
+import Loading from "@/components/Loading/Loading.vue";
 import { url } from "../assets/Api/apiConfig";
 import { gsap } from "gsap";
 
@@ -33,15 +35,17 @@ export default {
     Search,
     ContentLibrary,
     Claim,
+    Loading,
   },
   data() {
     return {
       results: [],
       typing: false,
       isLoaded: false,
-      inputValue: "hubble",
+      inputValue: "spacewalk",
       value: "",
       url,
+      isLoading: false,
     };
   },
 
@@ -53,14 +57,16 @@ export default {
     },
     search() {
       this.results = [];
+      this.isLoading = true;
       axios
         .get(`${url}${this.inputValue}&media_type=image`)
         .then((responce) => {
-          this.isLoading = true;
           this.results = responce?.data?.collection?.items;
+          this.results && (this.isLoading = false);
           responce.status === 200 && (this.isLoaded = true);
         })
         .catch((error) => console.log(error));
+
       gsap.to(".search", { y: -200, opacity: 0, rotate: [-45, -45], duration: 0.2 });
     },
     setInputValue: function (payload) {
